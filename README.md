@@ -3,16 +3,13 @@
 This repository ties together the different components making up the SPMD vectorizer I created in the course of my B.Sc. thesis.
 It is target-independent in principle, but has mostly been tested on the [Nyuzi processor][nyuzi-proc].
 
-More detailed descriptions, as well as a link to the thesis, will be added here once the thesis is officially wrapped up.
-In the mean time, if you have any questions, feel free to file an issue or write an email to robin.kruppe@gmail.com
-
 ### Components
 
 - A [fork of LLVM and Clang][nyuzi-toolchain], which mostly just adds the vectorization pass
 - A [fork of the Rust compiler][rust-nyuzi], supporting the Nyuzi target and integrating the vectorization pass
 - Some [benchmarks][benchmarks] that were used for performance evaluation
 
-The LLVM and Rust forks are built exactly as the upstream projects, with the obvious caveat that the Rust compiler needs to be pointed at a build of the forked LLVM (see `src/bootstrap/config.toml` in the Rust repository).
+The LLVM and Rust forks are built exactly as the upstream projects, with the caveat that the Rust compiler needs to be pointed at a build of the forked LLVM (see `src/bootstrap/config.toml` in the Rust repository).
 Running the benchmarks requires a simulator, which can be installed from the [Nyuzi repository][nyuzi-proc].
 For the benchmarks written in Rust, cross compilation with the custom toolchain is managed via [Xargo][xargo], so you'll need that as well.
 
